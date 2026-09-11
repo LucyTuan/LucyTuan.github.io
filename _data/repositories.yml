@@ -1,0 +1,9 @@
+# GitHub profiles and repositories shown on the /repositories/ page.
+# That page is currently disabled (published: false in _pages/repositories.md).
+github_users:
+  - LucyTuan
+
+repo_description_lines_max: 2
+
+github_repos:
+  - LucyTuan/LucyTuan.github.io

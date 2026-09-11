@@ -1,0 +1,290 @@
+/*******************************************************************************
+ * Local design overrides for LucyTuan.github.io
+ *
+ * Everything site-specific lives here so the al-folio theme can still be
+ * upgraded underneath it. Loaded last from assets/css/main.scss.
+ *
+ * Palette: deep teal accent + warm amber highlight on a warm off-white ground.
+ * Type: the OS system font stack — no webfonts are loaded.
+ ******************************************************************************/
+
+// ---------------------------------------------------------------- design tokens
+:root {
+  --site-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
+
+  --global-theme-color: #1d6a63;
+  --global-hover-color: #14524d;
+  --global-highlight-color: #b45309;
+  --global-bg-color: #fbfaf8;
+  --global-card-bg-color: #ffffff;
+  --global-text-color: #1a1d1c;
+  --global-text-color-light: #6b7270;
+  --global-divider-color: rgba(29, 106, 99, 0.14);
+  --global-code-bg-color: rgba(29, 106, 99, 0.06);
+  --global-footer-bg-color: #12201e;
+  --global-footer-text-color: #9db5b1;
+  --global-footer-link-color: #ffffff;
+
+  --site-surface: #ffffff;
+  --site-ring: rgba(29, 106, 99, 0.18);
+  --site-shadow: 0 1px 2px rgba(18, 32, 30, 0.04), 0 8px 24px rgba(18, 32, 30, 0.06);
+  --site-shadow-lift: 0 2px 4px rgba(18, 32, 30, 0.06), 0 16px 40px rgba(18, 32, 30, 0.12);
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #6ec6ba;
+  --global-hover-color: #8fd8ce;
+  --global-highlight-color: #e0a35c;
+  --global-bg-color: #14181a;
+  --global-card-bg-color: #1c2225;
+  --global-text-color: #e6eceb;
+  --global-text-color-light: #9aa5a3;
+  --global-divider-color: rgba(110, 198, 186, 0.18);
+  --global-code-bg-color: rgba(110, 198, 186, 0.08);
+
+  --site-surface: #1c2225;
+  --site-ring: rgba(110, 198, 186, 0.24);
+  --site-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --site-shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.35), 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+// ------------------------------------------------------------------ typography
+body {
+  font-family: var(--site-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.card-title {
+  font-family: var(--site-sans);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+// The name in the about header: large, quiet, serif.
+.post-header .post-title {
+  font-size: clamp(2.4rem, 6.5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+
+  // Only the given name carries weight; the surname stays light.
+  .font-weight-bold {
+    font-weight: 650;
+  }
+}
+
+.post-header .desc {
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  letter-spacing: 0.01em;
+}
+
+// Section headings get a small accent rule instead of plain text.
+article > h2 {
+  position: relative;
+  margin-top: 2.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--global-theme-color);
+  }
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+// --------------------------------------------------------------- profile photo
+.profile {
+  img {
+    box-shadow: var(--site-shadow);
+    outline: 1px solid var(--site-ring);
+    outline-offset: 6px;
+  }
+
+  .more-info {
+    margin-top: 1.4rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--global-text-color-light);
+    border-left: 2px solid var(--global-divider-color);
+    padding-left: 0.75rem;
+  }
+}
+
+// ----------------------------------------------------------------------- news
+.news {
+  .table th,
+  .table td {
+    border: 0;
+    padding: 0.55rem 0.5rem;
+    vertical-align: top;
+  }
+
+  // Date column as a quiet monospaced-feeling chip.
+  .table th[scope="row"] {
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--global-theme-color);
+    white-space: nowrap;
+    padding-top: 0.72rem;
+  }
+
+  .table tr {
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+// --------------------------------------------------------------- project cards
+.card {
+  background-color: var(--site-surface);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--site-shadow);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+
+  .card-img-top {
+    border-radius: 0;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 1.22rem;
+    margin-bottom: 0.3rem;
+    color: var(--global-text-color);
+  }
+
+  .card-text {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--global-text-color-light);
+  }
+
+  &.hoverable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--site-shadow-lift);
+    border-color: var(--site-ring);
+  }
+}
+
+// Category headings on the projects page.
+h2.category {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  color: var(--global-text-color-light);
+  border-bottom: 0;
+
+  &::after {
+    display: none;
+  }
+}
+
+// --------------------------------------------------------------- publications
+.publications {
+  ol.bibliography > li {
+    padding: 1.1rem 0 1.1rem 1.1rem;
+    border-left: 2px solid transparent;
+    border-bottom: 1px solid var(--global-divider-color);
+    transition:
+      border-left-color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      border-left-color: var(--global-theme-color);
+      background-color: var(--global-code-bg-color);
+    }
+  }
+
+  .title {
+    font-size: 1.08rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+  }
+
+  .periodical {
+    font-size: 0.86rem;
+    color: var(--global-text-color-light);
+  }
+
+  // Venue badge in the left gutter.
+  .abbr abbr {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+  }
+
+  // Award ribbon uses the warm highlight so it stands apart from venue badges.
+  .award {
+    color: var(--global-highlight-color);
+    border-color: var(--global-highlight-color);
+  }
+
+  .links a.btn {
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+    padding: 0.15rem 0.7rem;
+  }
+}
+
+// ---------------------------------------------------------------------- navbar
+.navbar {
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--global-divider-color);
+
+  .navbar-brand,
+  .nav-link {
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-item.active .nav-link {
+    font-weight: 600;
+    color: var(--global-theme-color) !important;
+  }
+}
+
+// ---------------------------------------------------------------------- footer
+footer.fixed-bottom,
+footer.sticky-bottom {
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+}

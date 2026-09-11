@@ -1,0 +1,159 @@
+# This file drives the /cv/ page (cv_format: rendercv in _pages/cv.md).
+# The CV page is currently hidden (nav: false in _pages/cv.md) and no PDF is
+# linked. To bring it back: set nav: true there, and add a `cv_pdf:` line
+# pointing at a PDF you drop in assets/pdf/.
+cv:
+  name: Yu-Rou Tuan
+  label: MS in Computer Vision, Carnegie Mellon University
+  email: yurout@andrew.cmu.edu
+  phone: "+1 412 482 0853"
+  location: Pittsburgh, PA
+  image: ""
+  summary: >
+    Computer vision researcher working on generative models for 3D/4D scene understanding,
+    autonomous driving, and multimodal learning.
+
+  social_networks:
+    - network: LinkedIn
+      username: yu-rou-tuan
+    - network: GitHub
+      username: LucyTuan
+
+  sections:
+    Education:
+      - institution: Carnegie Mellon University, School of Computer Science
+        location: Pittsburgh, PA
+        url: https://www.cs.cmu.edu/
+        area: Computer Vision
+        studyType: Master of Science
+        start_date: 2025-01
+        end_date: 2026-12
+        highlights:
+          - "Expected December 2026."
+
+      - institution: National Yang Ming Chiao Tung University
+        location: Hsinchu, Taiwan
+        url: https://www.nycu.edu.tw/
+        area: Electronics and Electrical Engineering
+        studyType: Bachelor of Science
+        start_date: 2020-09
+        end_date: 2024-06
+        highlights:
+          - "Dean's List, Fall 2022 and Fall 2023."
+
+      - institution: Technical University of Munich
+        location: Munich, Germany
+        url: https://www.tum.de/
+        area: Computation, Information and Technology
+        studyType: Exchange Student
+        start_date: 2023-09
+        end_date: 2023-09
+
+    Experience:
+      - company: DENSO International America, Pittsburgh Innovation Laboratory
+        position: Research & Development Intern
+        location: Pittsburgh, PA
+        start_date: 2026-05
+        end_date: 2026-08
+        highlights:
+          - "Published *RareOcc: Controllable 4D Occupancy and LiDAR Generation for Long-Tail Driving Scenes* at the ECCV 2026 Safe and Defensive Autonomous Driving Workshop."
+          - "Architected an end-to-end PyTorch pipeline for controllable 4D occupancy and LiDAR generation in long-tail, safety-critical driving scenes, outperforming SOTA by 29.3 fg-mIoU and 22.6 mIoU on nuPlan-Occ."
+          - "Eliminated temporal degradation and reduced LiDAR distribution error by 3.2x JSD / 20x MMD."
+          - "Built a unified editable-BEV pipeline adopted across teams, scaling 2,180 NHTSA CIREN crashes into 3,854 clips / 65K frames with Qwen3-VL."
+
+      - company: Cognitive Assistance Lab, Carnegie Mellon University
+        position: Research Student, advised by Prof. Kris Kitani
+        location: Pittsburgh, PA
+        start_date: 2025-09
+        end_date: present
+        highlights:
+          - "Lead development of a test-time optimization pipeline for semantic 3D part decomposition, integrating physical reasoning to generate assembly-ready components."
+          - "Designed a physics-based differentiable optimization framework that improves structural stability and reduces the sim-to-real gap for generated 3D assemblies."
+          - "Achieved a 95% stable-assembly rate, outperforming state-of-the-art 3D part decomposition baselines by over 70 percentage points."
+
+      - company: Natural Language Processing and Sentiment Analysis Lab, Academia Sinica
+        position: Research Assistant, advised by Dr. Lun-Wei Ku
+        location: Taipei, Taiwan
+        start_date: 2024-06
+        end_date: 2025-08
+        highlights:
+          - "Pre-trained Taiwan VLM 70B, a large-scale vision-language model specialized for Traditional Chinese, outperforming LLaVA-1.5 by 9.1% on MMMU."
+          - "Implemented tensor parallelism to scale ViT + LLaMA-3 training across 8 GPUs in a Linux HPC environment."
+          - "Built a high-throughput preprocessing pipeline for 50M web documents and 3B+ tokens in a 3-person team."
+
+    Publications:
+      - title: "RareOcc: Controllable 4D Occupancy and LiDAR Generation for Long-Tail Driving Scenes"
+        authors:
+          - Arthur Jakobsson
+          - "***Yu-Rou Tuan***"
+          - et al.
+        publisher: ECCV 2026 Workshop on Safe and Defensive Autonomous Driving
+        releaseDate: 2026
+        summary: End-to-end generative framework for 4D occupancy and LiDAR synthesis in safety-critical long-tail driving scenes.
+
+      - title: "StaDy4D: Towards Complete 4D Static-Dynamic Reconstruction with SIGMA"
+        authors:
+          - Hao-Tang Tsui*
+          - "***Yu-Rou Tuan****"
+          - Ethan Lai
+          - Chen-Yu Wang
+        publisher: CVPR 2026 Workshop on Generative 3D Reconstruction — Best Paper
+        releaseDate: 2026
+        summary: A 9K-sequence / 1.9M-frame paired static-dynamic 4D benchmark, plus SIGMA, a test-time-adapted reconstruction method reducing depth error by 41%.
+
+      - title: "ROGUE: Misaligned Agent Behavior Arising from Ordinary Computer Use"
+        authors:
+          - Jeremy Tien
+          - Abishek Anand*
+          - "***Yu-Rou Tuan****"
+          - et al.
+        publisher: Under review
+        releaseDate: 2026
+        summary: An OS-level agent-safety benchmark of 82 computer-use tasks evaluating 12 frontier models on OSWorld-Verified.
+
+      - title: "TrajPrompt: Aligning Color Trajectory with Vision-Language Representations"
+        authors:
+          - Li-Wu Tsao
+          - Hao-Tang Tsui
+          - "***Yu-Rou Tuan***"
+          - et al.
+        publisher: European Conference on Computer Vision (ECCV)
+        releaseDate: 2024
+        summary: Text and visual prompting for pedestrian trajectory prediction, improving ADE/FDE by over 35%.
+
+    Skills:
+      - name: Programming
+        icon: fa-solid fa-code
+        keywords: "Python, C/C++, Bash, LaTeX, MATLAB"
+
+      - name: Areas of Expertise
+        icon: fa-solid fa-brain
+        keywords: "Deep Learning, Machine Learning, Computer Vision, Multimodal Models, Generative Models"
+
+      - name: Frameworks
+        icon: fa-solid fa-cubes
+        keywords: "PyTorch, OpenCV, NumPy, SciPy, Pandas, Trimesh, Open3D, LangChain, Megatron-LM"
+
+      - name: Tools & Platforms
+        icon: fa-solid fa-screwdriver-wrench
+        keywords: "Git, CI/CD, Docker, Azure, Isaac Sim, Warp, Viser, Rerun, Ollama, Unsloth, vLLM"
+
+    Awards:
+      - title: Best Paper Award
+        date: 2026
+        awarder: CVPR 2026 Workshop on Generative 3D Reconstruction
+        summary: "For 'StaDy4D: Towards Complete 4D Static-Dynamic Reconstruction with SIGMA'."
+
+      - title: Dean's List
+        date: 2023
+        awarder: National Yang Ming Chiao Tung University
+        summary: Fall 2022 and Fall 2023.
+
+
+    Languages:
+      - name: Mandarin Chinese
+        summary: "Native speaker"
+
+      - name: English
+        summary: "Fluent"
+

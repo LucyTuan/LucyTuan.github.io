@@ -1,0 +1,8 @@
+# Local preview overrides. Not used by the GitHub Actions deploy.
+# Usage:
+#   bundle exec jekyll serve --config _config.yml,_config_dev.yml --livereload
+url: http://localhost:4000
+baseurl: ""
+# Responsive-image generation needs the ImageMagick binary; skip it locally.
+imagemagick:
+  enabled: false

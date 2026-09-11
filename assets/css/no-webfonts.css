@@ -1,0 +1,3 @@
+/* Intentionally empty: this site uses the OS system font stack (see _sass/_custom.scss).
+   The al-folio theme always renders a stylesheet <link> for `google_fonts`, so _config.yml
+   points it here instead of at fonts.googleapis.com. */

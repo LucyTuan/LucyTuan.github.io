@@ -1,0 +1,9 @@
+# Optional: link co-author names in your bibliography to their websites.
+# Key is the lowercase last name; `firstname` lists every spelling used in papers.bib.
+"tsui":
+  - firstname: ["Hao-Tang", "H.-T."]
+    url: https://henrytsui000.github.io/mypage/
+
+"kitani":
+  - firstname: ["Kris", "Kris M.", "K."]
+    url: http://www.cs.cmu.edu/~kkitani/

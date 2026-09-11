@@ -1,0 +1,10 @@
+# Social links shown under your profile picture and in the footer.
+# Delete any line you do not want to display; fill in the blank ones as you go.
+# Full list of supported networks: https://github.com/george-gca/jekyll-socials
+email: yurout@andrew.cmu.edu
+github_username: LucyTuan
+linkedin_username: yu-rou-tuan
+scholar_userid: # your Google Scholar ID (the string after "user=" in your Scholar profile URL)
+semanticscholar_id:
+orcid_id:
+rss_icon: false
